@@ -6,6 +6,7 @@
 # Node artifact files
 node_modules/
 dist/
+linux64GccDPInt32Opt/
 
 # Compiled Java class files
 *.class
