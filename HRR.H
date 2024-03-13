@@ -38,7 +38,7 @@
         
         // First, calculate the heat release rate as usual
         // Note: a call to chemistry.calculate() must have been done before
-        Qdot = chemistry.Qdot().ref();
+        Qdot = chemistry.Qdot().ref()*(1.0 - epspore);
 
         // Now set the HRR in the non-catalyst cells to zero
         forAll(cellsNoCatalyst, cc)

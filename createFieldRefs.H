@@ -81,6 +81,12 @@ forAll( cellsNoCatalyst, cc ){
     epspore[celli] = 1.0;
 }
 
+// Check for option to run isothermal simulation (deactivates energy eqn)
+bool isothermalFluid = readBool(thermo.properties().lookup("isothermalFlow"));
+if( isothermalFluid ){
+    Info<< "\nRunning isothermalFluid mode (no energy eqn solved)" << endl;
+}
+
 // Following initialization is dummy for no deactivation chemistry
 List<scalar> adsorptionKFactors(chemistry.nSpecie(), 0.0);
 List<scalar> H0f(chemistry.nSpecie(), 0.0);
