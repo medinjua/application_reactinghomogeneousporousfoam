@@ -35,8 +35,8 @@ forAll(Y, i)
 
         fvScalarMatrix YiEqn
         (
-            fvm::ddt(epspore*rho, Yi)
-          + epspore*mvConvection->fvmDiv(phi, Yi)
+            fvm::ddt(rho, Yi)
+          + mvConvection->fvmDiv(phi, Yi)
           // Note: default laminar transport model for species diffusion 
           // is unityLewisFourier, the species diffusion coefficient is 
           // then simply the thermal diffusion coefficient
@@ -44,7 +44,7 @@ forAll(Y, i)
           // -fvm::laplacian(this->alpha()*this->DEff(Yi), Yi)
           // this->alpha() refers to the alphaField, simply a volume fraction
           // DEff is simply the thermal diffusion coefficient
-          + epspore*thermophysicalTransport->divj(Yi)
+          + thermophysicalTransport->divj(Yi)
          ==
             //reaction->R(Yi)               // replaced RR matrix
             omegarr_i

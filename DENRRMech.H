@@ -112,7 +112,7 @@ else{
     forAll(cellsCatalyst, cc)
     {
         label celli       = cellsCatalyst[cc];
-        omegarr_i[celli]  = RRi[celli]*(1.0 - epspore[celli]);
+        omegarr_i[celli]  = RRi[celli];
     }
 
 }
