@@ -27,7 +27,7 @@
                                            // thermophysicalTransport>divq
         ==
             //reaction->Qdot()                  // replaced Qdot field by HRR
-            Qdot
+            epspore*Qdot
           + fvModels.source(rho, he)
         );
 
